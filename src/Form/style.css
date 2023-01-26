@@ -1,0 +1,29 @@
+.flex {
+    flex-basis: 500px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form__label {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .form__fieldset {
+    background-color: rgb(240, 237, 232);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px auto;
+  }
+  
+  .form__legend {
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #9f676782;
+  }
+
+  .form {
+    overflow-x: auto;
+    text-align: center;
+  }
