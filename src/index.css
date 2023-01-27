@@ -9,3 +9,14 @@ html {
 *, ::after, ::before {
   box-sizing: inherit;
 }
+.form__button {
+  background-color: #9f6767e8;
+  border: none;
+  border-radius: 3px;
+  width: 48%;
+}
+
+.form__button:hover {
+  background-color: #9f676732;
+  cursor: pointer;
+}
