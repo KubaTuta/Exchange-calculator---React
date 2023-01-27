@@ -1,11 +1,24 @@
-.form__button {
-    background-color: #9f6767e8;
+.buttons__button {
+    background-color: #89cef9;
     border: none;
     border-radius: 3px;
-    width: 48%;
+    width: 49%;
+    margin: 1px;
+    transition: 1s;
 }
 
-.form__button:hover {
-    background-color: #9f676732;
+.buttons__button:hover {
+    background-color: #89cef96b;
     cursor: pointer;
+}
+
+@media (max-width: 500px) {
+    .buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .buttons__button {
+        min-width: 100%;
+    }
 }

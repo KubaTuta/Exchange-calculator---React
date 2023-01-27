@@ -1,29 +1,7 @@
 html {
   box-sizing: border-box;
-
 }
 
 *, ::after, ::before {
   box-sizing: inherit;
-}
-.container {
-  min-height: 100vh;
-  height: auto;
-  background-image: url("../public/money.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size:    cover ;
-}
-.form__button {
-  background-color: #89cef9;
-  border: none;
-  border-radius: 3px;
-  width: 49%;
-  margin: 1px;
-  transition: 1s;
-}
-
-.form__button:hover {
-  background-color: #89cef99d;
-  cursor: pointer;
 }
