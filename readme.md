@@ -4,7 +4,7 @@
 #### DEMO
 ##### https://kubatuta.github.io/Exchange-calculator-React/
 
-![gif](./exchange.gif)
+![gif](./src/exchange.gif)
 
 ###### Technologies and methods used in project:
 1. HTML
