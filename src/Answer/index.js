@@ -1,12 +1,11 @@
-import React from "react";
-
-const Answer = (props) => (
+const Answer = ({printResult, result, presentCurrency}) => (
     <p>
-        Otrzymasz
-        <strong className="form__result">
-        </strong>
-        <span className="form__answer">
-        </span>
-    </p>
+    Otrzymasz&nbsp;
+    <strong>
+      {printResult(result, presentCurrency)}
+    </strong>
+    <span>
+    </span>
+  </p>
 );
 export default Answer;

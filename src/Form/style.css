@@ -10,7 +10,7 @@
   }
   
   .form__fieldset {
-    background-color: rgb(240, 237, 232);
+    background-color: rgb(135 159 183);
     padding: 20px;
     border-radius: 10px;
     margin: 10px auto;
@@ -20,7 +20,7 @@
     padding: 5px 10px;
     border: 1px solid black;
     border-radius: 5px;
-    background-color: #9f676782;
+    background-color: #89cef9;
   }
 
   .form {

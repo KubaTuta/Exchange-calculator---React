@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import "./style.css";
 import { currenciesIn } from "../currencies";
 import { currenciesOut } from "../currencies";
+import Buttons from "../Buttons";
+import Answer from "../Answer";
+import Input from "../Input";
 
 const Form = () => {
-
   const [currencyIn, setCurrencyIn] = useState(currenciesIn[0].name);
   const [currencyOut, setCurrencyOut] = useState(currenciesOut[0].name);
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState(0);
   const [presentCurrency, setPresentCurrency] = useState("");
-
   const rateIn = currenciesIn.find(({ name }) => name === currencyIn).rate;
   const rateOut = currenciesOut.find(({ name }) => name === currencyOut).rate;
 
@@ -29,9 +30,9 @@ const Form = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="form">
       <form
-        className="form"
+        className="form__main"
         onSubmit={onSubmit}
       >
         <fieldset className="form__fieldset">
@@ -42,7 +43,6 @@ const Form = () => {
           <p>
             <label className="form__label">Posiadana</label>
           </p>
-
           <p>
             <select
               className="form__currencyFrom"
@@ -55,7 +55,6 @@ const Form = () => {
               <option>HRK</option>
             </select>
           </p>
-
           <label className="form__label">Pożądana</label>
           <p>
             <select
@@ -72,45 +71,30 @@ const Form = () => {
           <p>
             <label>Wpisz ilość posiadanej waluty:</label>
           </p>
-          <p>
-            <input
-              min="0"
-              className="form__amount"
-              type="number"
-              required
-              placeholder="wpisz wartość"
-              value={amount}
-              onChange={({ target }) => setAmount(target.value)}
-            />
-          </p>
-          <p>
-            <button
-              type="submit"
-              className="form__button"
-              onClick={() => { setResult(() => calculateResult(rateIn, rateOut, amount)); setPresentCurrency(() => currencyOut) }}
-            >
-              Oblicz
-            </button>
-            <button
-              type="reset"
-              className="form__button"
-              onClick={() => { setResult(() => 0); setAmount(() => ""); setCurrencyIn(() => currenciesIn[0].name); setCurrencyOut(() => currenciesOut[0].name) }}
-            >
-              Wyczyść
-            </button>
-          </p>
-          <p>
-            Otrzymasz&nbsp;
-            <strong className="form__result">
-              {printResult()}
-            </strong>
-            <span className="form__answer">
-            </span>
-          </p>
+          <Input
+            amount={amount}
+            setAmount={setAmount}
+          />
+          <Buttons
+            calculateResult={calculateResult}
+            setResult={setResult}
+            setPresentCurrency={setPresentCurrency}
+            setAmount={setAmount}
+            setCurrencyIn={setCurrencyIn}
+            setCurrencyOut={setCurrencyOut}
+            rateIn={rateIn}
+            rateOut={rateOut}
+            amount={amount}
+            currencyOut={currencyOut}
+          />
+          <Answer
+            printResult={printResult}
+            result={result}
+            presentCurrency={presentCurrency}
+          />
         </fieldset>
       </form>
     </div>
-
   );
 }
 export default Form;
