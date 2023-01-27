@@ -13,7 +13,7 @@ export const currenciesIn = [
     },
     {
       name: "HRK",
-      rate: 1.6,
+      rate: 0.625,
     },
   ];
 
@@ -28,7 +28,7 @@ export const currenciesIn = [
     },
     {
       name: "HRK",
-      rate: 1.6,
+      rate: 0.625,
     },
     {
       name: "PLN",
