@@ -5,6 +5,7 @@ import { currenciesOut } from "../currencies";
 import Buttons from "../Buttons";
 import Answer from "../Answer";
 import Input from "../Input";
+import DateAndTime from "./Date";
 
 const Form = () => {
   const [currencyIn, setCurrencyIn] = useState(currenciesIn[0].name);
@@ -14,6 +15,8 @@ const Form = () => {
   const [presentCurrency, setPresentCurrency] = useState("");
   const rateIn = currenciesIn.find(({ name }) => name === currencyIn).rate;
   const rateOut = currenciesOut.find(({ name }) => name === currencyOut).rate;
+ 
+
 
   const calculateResult = (rateIn, rateOut, amount) => {
     return (rateIn / rateOut) * amount
@@ -39,6 +42,7 @@ const Form = () => {
           <legend className="form__legend">
             Kalkulator walut
           </legend>
+         <DateAndTime />
           <label>Wybierz pary walut</label>
           <p>
             <label className="form__label">Posiadana</label>
