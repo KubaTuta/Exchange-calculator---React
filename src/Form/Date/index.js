@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./style.css";
 
 const DateAndTime = () => {
     const [myDate, setMyDate] = useState(new Date());
@@ -20,7 +21,7 @@ const DateAndTime = () => {
 
 
     return (
-        <p>
+        <p className="clock">
             Dzisiaj jest {` `}
             {myDate.toLocaleDateString(
                 undefined,
