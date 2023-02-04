@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/Exchange-calculator-React/static/css/main.37daf623.css",
-    "main.js": "/Exchange-calculator-React/static/js/main.1897adde.js",
+    "main.css": "/Exchange-calculator-React/static/css/main.e2c767ff.css",
+    "main.js": "/Exchange-calculator-React/static/js/main.53d58ea2.js",
     "static/js/787.23c86d39.chunk.js": "/Exchange-calculator-React/static/js/787.23c86d39.chunk.js",
-    "static/media/money.jpg": "/Exchange-calculator-React/static/media/money.96e7c9ccabe3e58d406f.jpg",
     "index.html": "/Exchange-calculator-React/index.html",
-    "main.37daf623.css.map": "/Exchange-calculator-React/static/css/main.37daf623.css.map",
-    "main.1897adde.js.map": "/Exchange-calculator-React/static/js/main.1897adde.js.map",
+    "main.e2c767ff.css.map": "/Exchange-calculator-React/static/css/main.e2c767ff.css.map",
+    "main.53d58ea2.js.map": "/Exchange-calculator-React/static/js/main.53d58ea2.js.map",
     "787.23c86d39.chunk.js.map": "/Exchange-calculator-React/static/js/787.23c86d39.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.37daf623.css",
-    "static/js/main.1897adde.js"
+    "static/css/main.e2c767ff.css",
+    "static/js/main.53d58ea2.js"
   ]
 }
