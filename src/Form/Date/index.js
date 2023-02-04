@@ -1,18 +1,19 @@
-import "./style.css";
+
 import { useCurrentDate } from "../../useCurrentDate";
+import { P } from "./styled";
 
 const DateAndTime = () => {
 
     const date = useCurrentDate();
 
     return (
-        <p className="clock">
+        <P>
             Dzisiaj jest {` `}
             {date.toLocaleDateString(
                 undefined,
                 { weekday: "long", day: "numeric", month: "long", hour: "numeric", minute: "numeric", second: "numeric" }
             )}
-        </p>
+        </P>
     );
 };
 

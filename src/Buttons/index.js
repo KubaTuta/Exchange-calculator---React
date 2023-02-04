@@ -1,22 +1,21 @@
-import "./style.css";
+
 import { currenciesIn, currenciesOut } from "../currencies";
+import { Button } from "./styled";
 
 const Buttons =
   ({ rateIn, rateOut, amount, currencyOut, setResult, calculateResult, setPresentCurrency, setAmount, setCurrencyIn, setCurrencyOut }) => (
-    <p className="buttons">
-      <button
+    <p>
+      <Button
         type="submit"
-        className="buttons__button"
         onClick={() => {
           setResult(() => calculateResult(rateIn, rateOut, amount));
           setPresentCurrency(() => currencyOut)
         }}
       >
         Oblicz
-      </button>
-      <button
+      </Button>
+      <Button
         type="reset"
-        className="buttons__button"
         onClick={() => {
           setResult(() => 0); 
           setAmount(() => "");
@@ -25,7 +24,7 @@ const Buttons =
         }}
       >
         Wyczyść
-      </button>
+      </Button>
     </p>
   );
 

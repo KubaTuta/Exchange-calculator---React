@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import "./style.css";
-import { currenciesIn } from "../currencies";
-import { currenciesOut } from "../currencies";
+import { currenciesIn, currenciesOut } from "../currencies";
 import Buttons from "../Buttons";
 import Answer from "../Answer";
 import Input from "../Input";
 import DateAndTime from "./Date";
+import { Div, StyledForm, Fieldset, Legend, Label } from "./styled";
 
 const Form = () => {
   const [currencyIn, setCurrencyIn] = useState(currenciesIn[0].name);
@@ -15,8 +14,6 @@ const Form = () => {
   const [presentCurrency, setPresentCurrency] = useState("");
   const rateIn = currenciesIn.find(({ name }) => name === currencyIn).rate;
   const rateOut = currenciesOut.find(({ name }) => name === currencyOut).rate;
- 
-
 
   const calculateResult = (rateIn, rateOut, amount) => {
     return (rateIn / rateOut) * amount
@@ -33,19 +30,18 @@ const Form = () => {
   };
 
   return (
-    <div className="form">
-      <form
-        className="form__main"
+    <Div>
+      <StyledForm
         onSubmit={onSubmit}
       >
-        <fieldset className="form__fieldset">
-          <legend className="form__legend">
+        <Fieldset>
+          <Legend className="form__legend">
             Kalkulator walut
-          </legend>
-         <DateAndTime />
+          </Legend>
+          <DateAndTime />
           <label>Wybierz pary walut</label>
           <p>
-            <label className="form__label">Posiadana</label>
+            <Label>Posiadana</Label>
           </p>
           <p>
             <select
@@ -59,7 +55,7 @@ const Form = () => {
               <option>HRK</option>
             </select>
           </p>
-          <label className="form__label">Pożądana</label>
+          <Label>Pożądana</Label>
           <p>
             <select
               className="form__currencyTo"
@@ -96,9 +92,9 @@ const Form = () => {
             result={result}
             presentCurrency={presentCurrency}
           />
-        </fieldset>
-      </form>
-    </div>
+        </Fieldset>
+      </StyledForm>
+    </Div>
   );
 }
 export default Form;
