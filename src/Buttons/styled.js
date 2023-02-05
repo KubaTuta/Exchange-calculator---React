@@ -8,7 +8,7 @@ export const Button = styled.button`
     margin: 1px;
     transition: 1s;
 
-    @media(min-width: 500px) {
+    @media(max-width: 500px) {
         min-width: 100%;
     }
     &:hover {
