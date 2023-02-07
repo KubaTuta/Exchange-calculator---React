@@ -1,22 +1,21 @@
 import React, { useState } from "react";
-import { currenciesIn, currenciesOut } from "../currencies";
 import Buttons from "../Buttons";
 import Answer from "../Answer";
 import Input from "../Input";
 import DateAndTime from "./Date";
 import { Div, StyledForm, Fieldset, Legend, Label } from "./styled";
-
+import { currenciesIn } from "../currencies";
 
 const Form = ({apiData}) => {
  
-
-  const [currencyIn, setCurrencyIn] = useState(currenciesIn[0].currency);
-  const [currencyOut, setCurrencyOut] = useState(currenciesOut[0].currency);
+console.log(currenciesIn);
+  const [currencyIn, setCurrencyIn] = useState(apiData[0].currency);
+  const [currencyOut, setCurrencyOut] = useState(apiData[0].currency);
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState(0);
   const [presentCurrency, setPresentCurrency] = useState("");
-  const rateIn = currenciesIn.find(({ currency }) => currency === currencyIn).mid;
-  const rateOut = currenciesOut.find(({ currency }) => currency === currencyOut).mid;
+  const rateIn = apiData.find(({ currency }) => currency === currencyIn).mid;
+  const rateOut = apiData.find(({ currency }) => currency === currencyOut).mid;
 
   const calculateResult = (rateIn, rateOut, amount) => {
     return (rateIn / rateOut) * amount
@@ -51,7 +50,7 @@ const Form = ({apiData}) => {
               value={currencyIn}
               onChange={({ target }) => setCurrencyIn(target.value)}
             >
-              {currenciesIn.map(money => (
+              {apiData.map(money => (
                 <option key={money.currency}>
                 {money.currency}
                 </option>
@@ -64,7 +63,7 @@ const Form = ({apiData}) => {
               value={currencyOut}
               onChange={({ target }) => setCurrencyOut(target.value)}
             >
-           {currenciesOut.map(money => (
+           {apiData.map(money => (
             <option key={money.currency}>
               {money.currency}
             </option>
