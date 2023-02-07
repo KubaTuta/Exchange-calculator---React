@@ -35,7 +35,7 @@ const Form = () => {
         onSubmit={onSubmit}
       >
         <Fieldset>
-          <Legend className="form__legend">
+          <Legend>
             Kalkulator walut
           </Legend>
           <DateAndTime />
@@ -45,27 +45,27 @@ const Form = () => {
           </p>
           <p>
             <select
-              className="form__currencyFrom"
               value={currencyIn}
               onChange={({ target }) => setCurrencyIn(target.value)}
             >
-              <option>PLN</option>
-              <option>EUR</option>
-              <option>GBP</option>
-              <option>HRK</option>
+              {currenciesIn.map(currency => (
+                <option key={currency.name}>
+                  {currency.name}
+                </option>
+              ))}
             </select>
           </p>
           <Label>Pożądana</Label>
           <p>
             <select
-              className="form__currencyTo"
               value={currencyOut}
               onChange={({ target }) => setCurrencyOut(target.value)}
             >
-              <option>EUR</option>
-              <option>GBP</option>
-              <option>HRK</option>
-              <option>PLN</option>
+           {currenciesOut.map(currency => (
+            <option key={currency.name}>
+              {currency.name}
+            </option>
+           ))}
             </select>
           </p>
           <p>
