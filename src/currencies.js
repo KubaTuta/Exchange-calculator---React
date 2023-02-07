@@ -1,37 +1,37 @@
 export const currenciesIn = [
     {
-      name: "PLN",
-      rate: 1,
+      currency: "PLN",
+      mid: 1,
     },
     {
-      name: "EUR",
-      rate: 4.5,
+      currency: "EUR",
+      mid: 4.5,
     },
     {
-      name: "GBP",
-      rate: 5,
+      currency: "GBP",
+      mid: 5,
     },
     {
-      name: "HRK",
-      rate: 0.625,
+      currency: "HRK",
+      mid: 0.625,
     },
   ];
 
   export const currenciesOut = [
     {
-      name: "EUR",
-      rate: 4.5,
+      currency: "EUR",
+      mid: 4.5,
     },
     {
-      name: "GBP",
-      rate: 5,
+      currency: "GBP",
+      mid: 5,
     },
     {
-      name: "HRK",
-      rate: 0.625,
+      currency: "HRK",
+      mid: 0.625,
     },
     {
-      name: "PLN",
-      rate: 1,
+      currency: "PLN",
+      mid: 1,
     },
   ];

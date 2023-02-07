@@ -6,14 +6,17 @@ import Input from "../Input";
 import DateAndTime from "./Date";
 import { Div, StyledForm, Fieldset, Legend, Label } from "./styled";
 
-const Form = () => {
-  const [currencyIn, setCurrencyIn] = useState(currenciesIn[0].name);
-  const [currencyOut, setCurrencyOut] = useState(currenciesOut[0].name);
+
+const Form = ({apiData}) => {
+ 
+
+  const [currencyIn, setCurrencyIn] = useState(currenciesIn[0].currency);
+  const [currencyOut, setCurrencyOut] = useState(currenciesOut[0].currency);
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState(0);
   const [presentCurrency, setPresentCurrency] = useState("");
-  const rateIn = currenciesIn.find(({ name }) => name === currencyIn).rate;
-  const rateOut = currenciesOut.find(({ name }) => name === currencyOut).rate;
+  const rateIn = currenciesIn.find(({ currency }) => currency === currencyIn).mid;
+  const rateOut = currenciesOut.find(({ currency }) => currency === currencyOut).mid;
 
   const calculateResult = (rateIn, rateOut, amount) => {
     return (rateIn / rateOut) * amount
@@ -48,9 +51,9 @@ const Form = () => {
               value={currencyIn}
               onChange={({ target }) => setCurrencyIn(target.value)}
             >
-              {currenciesIn.map(currency => (
-                <option key={currency.name}>
-                  {currency.name}
+              {currenciesIn.map(money => (
+                <option key={money.currency}>
+                {money.currency}
                 </option>
               ))}
             </select>
@@ -61,9 +64,9 @@ const Form = () => {
               value={currencyOut}
               onChange={({ target }) => setCurrencyOut(target.value)}
             >
-           {currenciesOut.map(currency => (
-            <option key={currency.name}>
-              {currency.name}
+           {currenciesOut.map(money => (
+            <option key={money.currency}>
+              {money.currency}
             </option>
            ))}
             </select>
