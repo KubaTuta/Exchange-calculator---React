@@ -25,7 +25,7 @@ const [apiData, setApiData] = useState([
 ]);
 
 const fetchingData = () => {
-  fetch("https://api.nbp.pl/api/exchangerates/tables/A/today/?format=json")
+  fetch("https://api.nbp.pl/api/exchangerates/tables/A/?format=json")
     .then(response => response.json())
     .then(rates => setApiData(rates[0].rates))
     .catch(error => console.error("coś się nie wczytało", error)); 
