@@ -19,8 +19,8 @@ const Buttons =
         onClick={() => {
           setResult(() => 0); 
           setAmount(() => "");
-          setCurrencyIn(() => currenciesIn[0].name);
-          setCurrencyOut(() => currenciesOut[0].name)
+          setCurrencyIn(() => currenciesIn[0].currency);
+          setCurrencyOut(() => currenciesOut[0].currency)
         }}
       >
         Wyczyść
