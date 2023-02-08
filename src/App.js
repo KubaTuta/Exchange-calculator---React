@@ -35,7 +35,7 @@ useEffect(() => {
     .catch(error => console.error("coś się nie wczytało", error)); 
 };
 
-setTimeout(fetchingData, 1000);
+setTimeout(fetchingData, 3000);
 },
 []
 );

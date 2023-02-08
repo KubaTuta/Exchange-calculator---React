@@ -4,7 +4,7 @@ import Answer from "../Answer";
 import Input from "../Input";
 import DateAndTime from "./Date";
 import { Div, StyledForm, Fieldset, Legend, Label } from "./styled";
-import { currenciesIn, currenciesOut } from "../currencies";
+import { currenciesOut } from "../currencies";
 
 const Form = ({ apiData }) => {
 
