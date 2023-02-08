@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/Exchange-calculator-React/static/js/main.df788b02.js",
+    "main.js": "/Exchange-calculator-React/static/js/main.fb8ead14.js",
     "static/js/787.23c86d39.chunk.js": "/Exchange-calculator-React/static/js/787.23c86d39.chunk.js",
     "static/media/money.jpg": "/Exchange-calculator-React/static/media/money.96e7c9ccabe3e58d406f.jpg",
     "index.html": "/Exchange-calculator-React/index.html",
-    "main.df788b02.js.map": "/Exchange-calculator-React/static/js/main.df788b02.js.map",
+    "main.fb8ead14.js.map": "/Exchange-calculator-React/static/js/main.fb8ead14.js.map",
     "787.23c86d39.chunk.js.map": "/Exchange-calculator-React/static/js/787.23c86d39.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.df788b02.js"
+    "static/js/main.fb8ead14.js"
   ]
 }
