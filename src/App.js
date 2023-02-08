@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Form from "./Form";
 import Container from "./Container";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 
 function App() {
 
@@ -34,7 +35,7 @@ useEffect(() => {
     .catch(error => console.error("coś się nie wczytało", error)); 
 };
 
-setTimeout(fetchingData, 3000);
+setTimeout(fetchingData, 1000);
 },
 []
 );
@@ -46,7 +47,8 @@ console.log("to są nowe dane", apiData);
 
   return (
     <Container className="container">
-      <Form apiData={apiData}/>
+      <Form apiData={apiData}
+      />
     </Container>
   );
 }
