@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 function App() {
 
   const [apiData, setApiData] = useState(null);
+  const [todaysDate, setTodaysDate] = useState(null)
   const [isPending, setIsPending] = useState(true);
 
   useEffect(() => {
@@ -19,7 +20,7 @@ function App() {
         }
         return response.json();
       }
-      ).then(data => { setApiData(data[0].rates ); setIsPending(false) }
+      ).then(data => { setApiData(data[0].rates ); setTodaysDate(data[0].effectiveDate); setIsPending(false) }
       ).catch((error) => {
         console.error(error.message);
       });
@@ -29,7 +30,10 @@ function App() {
   },
     []
   );
+
   console.log(apiData);
+  console.log(todaysDate);
+
   return (
     <Container className="container">
       {isPending && <Loading />}
