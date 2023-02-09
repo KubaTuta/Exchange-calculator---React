@@ -16,7 +16,7 @@ const Form = ({ apiData }) => {
   const rateOut = apiData.find(({ currency }) => currency === currencyOut);
 
   const calculateResult = (rateIn, rateOut, amount) => {
-    return (rateIn.mid / rateOut.mid) * amount
+    return (rateIn.bid / rateOut.bid) * amount
   };
 
   const printResult = () => {

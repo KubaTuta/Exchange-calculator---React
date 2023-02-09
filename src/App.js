@@ -12,25 +12,24 @@ function App() {
 
   useEffect(() => {
     const fetchingData = () => {
-      fetch("https://api.nbp.pl/api/exchangerates/tabes/A/?format=json"
+      fetch("https://api.nbp.pl/api/exchangerates/tables/c/?format=json"
       ).then(response => {
         if (!response.ok) {
-          throw new Error("coś się popsuło")
+          throw new Error(response.statusText)
         }
-        return response.json()
+        return response.json();
       }
-      ).then(rates => { setApiData(rates[0].rates); setIsPending(false) }
+      ).then(data => { setApiData(data[0].rates ); setIsPending(false) }
       ).catch((error) => {
-        console.log(error.message);
-        console.log(error)
+        console.error(error.message);
       });
     };
-
+    
     setTimeout(fetchingData, 1000);
   },
     []
   );
-
+  console.log(apiData);
   return (
     <Container className="container">
       {isPending && <Loading />}
