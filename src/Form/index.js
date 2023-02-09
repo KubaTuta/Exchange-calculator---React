@@ -4,8 +4,9 @@ import Answer from "../Answer";
 import Input from "../Input";
 import DateAndTime from "./Date";
 import { Div, StyledForm, Fieldset, Legend, Label } from "./styled";
+import { RatesDate } from "./RatesDate";
 
-const Form = ({ apiData }) => {
+const Form = ({ apiData, todaysDate }) => {
 
   const [currencyIn, setCurrencyIn] = useState(apiData[0].currency);
   const [currencyOut, setCurrencyOut] = useState(apiData[0].currency);
@@ -19,11 +20,7 @@ const Form = ({ apiData }) => {
     return (rateIn.bid / rateOut.bid) * amount
   };
 
-  const printResult = () => {
-    if (result !== 0) {
-      return `${result.toFixed(2)} ${presentCurrency}`;
-    }
-  };
+ 
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -88,10 +85,10 @@ const Form = ({ apiData }) => {
             currencyOut={currencyOut}
           />
           <Answer
-            printResult={printResult}
             result={result}
             presentCurrency={presentCurrency}
           />
+         <RatesDate todaysDate={todaysDate} />
         </Fieldset>
       </StyledForm>
     </Div>

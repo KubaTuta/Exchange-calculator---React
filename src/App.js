@@ -37,7 +37,7 @@ function App() {
   return (
     <Container className="container">
       {isPending && <Loading />}
-      {apiData && <Form apiData={apiData} isPending={isPending} />}
+      {apiData && <Form apiData={apiData} isPending={isPending} todaysDate={todaysDate}/>}
     </Container>
   );
 }
